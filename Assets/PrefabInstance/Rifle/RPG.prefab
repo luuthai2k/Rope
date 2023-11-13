@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1825139126226861
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4420183143809834}
+  - component: {fileID: 114039472367128321}
+  m_Layer: 0
+  m_Name: RPG
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4420183143809834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825139126226861}
+  m_LocalRotation: {x: -0.1802069, y: -0.6382117, z: 0.007905423, w: -0.748431}
+  m_LocalPosition: {x: 210.7431, y: 1.444487, z: -584.7224}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4329391016406290}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 65.11901, y: -73.36821, z: -49.667816}
+--- !u!114 &114039472367128321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825139126226861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762dcbf4eb020c4236c4892173d74ccb, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DebugLog: 0
+  Archetype: 0
+  Type: 3
+  AmmoType: 5
+  WeaponNameInList: 23
+  Name:
+  AttackDistance: 0
+  Damage: 2025
+  WeaponDamageType: 2
+  DefenceIgnorence: 0
+  AttackDelay: 1
+  SoundAttack: {fileID: 8300000, guid: 144f9ce6da9a0d94ab9f4978912da35a, type: 3}
+  SoundHit: {fileID: 8300000, guid: 6067af369a0390b41a5f4291c0432941, type: 3}
+  image: {fileID: 21300000, guid: 7a82db0683af8ad49bc92ce4380976d4, type: 2}
+  Unique: 0
+  WeaponObjects:
+  - {fileID: 1683201478538483}
+  AimOffset: {x: 0.2, y: 0}
+  lastAttackTime: 0
+  RangedWeaponType: 7
+  BigGun: 1
+  ShotSfx: 0
+  Tracer: {fileID: 0}
+  RechargeSound: {fileID: 8300000, guid: ed873a70d2384504b923d10963e8d2ee, type: 3}
+  ShotgunBulletsCount: 1
+  RechargeDelay: 3.1
+  ScatterAngle: 0.5
+  FireKickPower: 4
+  IsFiniteAmmo: 1
+  ShootAlarmRange: 60
+  Muzzle: {fileID: 4778584380246329}
+  IgnoreMuzzleDirection: 0
+  IsRecharging: 0
+  AmmoContainer: {fileID: 0}
+  RangedFireDistanceNPC: 15
+  AmmoCartridgeCapacity: 1
+  AmmoOutOfCartridgeCount: 0
+  EnergyCost: 0
+  LastHitDirectionVector: {x: 0, y: 0, z: 0}
+  LastHitPosition: {x: 0, y: 0, z: 0}
+  Projectile: {fileID: 1170124630581204, guid: 22892a8ba96d75c4cba6ac2011dce4b9, type: 2}
+  ProjectileSpeedRate: 200
+  CurveRate: 0
+  BaseRigidbody: {fileID: 0}
+--- !u!1 &1683201478538483
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4329391016406290}
+  - component: {fileID: 33382507883171353}
+  - component: {fileID: 23781259358489314}
+  m_Layer: 0
+  m_Name: RPG Preview 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4329391016406290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683201478538483}
+  m_LocalRotation: {x: -0.6228449, y: -0.06860798, z: -0.7642824, w: -0.15241268}
+  m_LocalPosition: {x: -0.18600452, y: -1.9993548, z: -0.18317342}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4778584380246329}
+  m_Father: {fileID: 4420183143809834}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 53.926266, y: 68.61405, z: -119.15898}
+--- !u!33 &33382507883171353
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683201478538483}
+  m_Mesh: {fileID: 4300000, guid: f797a392e7fca7047afb72470adc4c91, type: 2}
+--- !u!23 &23781259358489314
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683201478538483}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fa1dc89dc5e5035409a51751e3c1415f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1242642933645564
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4778584380246329}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4778584380246329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242642933645564}
+  m_LocalRotation: {x: 0.6980097, y: -0.07138674, z: 0.712441, w: -0.01068403}
+  m_LocalPosition: {x: 0.00916, y: -0.0199, z: -3E-05}
+  m_LocalScale: {x: 0.010000007, y: 0.010000003, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4329391016406290}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -82.491394, y: 83.243996, z: 102.43723}

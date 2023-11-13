@@ -1,0 +1,202 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1644464526204158
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4175921206137564}
+  - component: {fileID: 114006587699498244}
+  m_Layer: 0
+  m_Name: Uzi
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4175921206137564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644464526204158}
+  m_LocalRotation: {x: 0.1391256, y: 0.6095489, z: -0.02977592, w: 0.7798768}
+  m_LocalPosition: {x: 210.9685, y: 1.520808, z: -584.4005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4460304359747438}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 39.631245, y: -73.54269, z: -25.769272}
+--- !u!114 &114006587699498244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644464526204158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b2939f85849dc55f39a43be406a6858, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DebugLog: 0
+  Archetype: 0
+  Type: 5
+  AmmoType: 0
+  WeaponNameInList: 17
+  Name:
+  AttackDistance: 0
+  Damage: 31
+  WeaponDamageType: 2
+  DefenceIgnorence: 0
+  AttackDelay: 0.07
+  SoundAttack: {fileID: 8300000, guid: 4473deba61e38dc44813f8573ebc36f9, type: 3}
+  SoundHit: {fileID: 8300000, guid: 6067af369a0390b41a5f4291c0432941, type: 3}
+  image: {fileID: 21300000, guid: 607f972d2c6c03841b0ee993e1a5826f, type: 2}
+  Unique: 0
+  WeaponObjects:
+  - {fileID: 1979071707806332}
+  AimOffset: {x: 0.2, y: 0.2}
+  lastAttackTime: 0
+  RangedWeaponType: 3
+  BigGun: 0
+  ShotSfx: 0
+  Tracer: {fileID: 1369011053285353, guid: 02f2b06e45247134f86906bb99cee296, type: 2}
+  RechargeSound: {fileID: 8300000, guid: ed873a70d2384504b923d10963e8d2ee, type: 3}
+  ShotgunBulletsCount: 1
+  RechargeDelay: 2.1
+  ScatterAngle: 5
+  FireKickPower: 1
+  IsFiniteAmmo: 1
+  ShootAlarmRange: 50
+  Muzzle: {fileID: 4248435740277673}
+  IgnoreMuzzleDirection: 0
+  IsRecharging: 0
+  AmmoContainer: {fileID: 0}
+  RangedFireDistanceNPC: 15
+  AmmoCartridgeCapacity: 32
+  AmmoOutOfCartridgeCount: 0
+  EnergyCost: 0
+  LastHitDirectionVector: {x: 0, y: 0, z: 0}
+  LastHitPosition: {x: 0, y: 0, z: 0}
+--- !u!1 &1979071707806332
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4460304359747438}
+  - component: {fileID: 33168025790713159}
+  - component: {fileID: 23310634890709528}
+  m_Layer: 0
+  m_Name: Uzi_d1 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4460304359747438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979071707806332}
+  m_LocalRotation: {x: -0.69982773, y: -0.011385618, z: -0.7058765, w: -0.10885777}
+  m_LocalPosition: {x: 0.059, y: 0.024, z: -2.702}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4248435740277673}
+  m_Father: {fileID: 4175921206137564}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 83.15364, y: 80.23272, z: -88.91327}
+--- !u!33 &33168025790713159
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979071707806332}
+  m_Mesh: {fileID: 4300000, guid: 76f3767340662c744a800373c177c333, type: 2}
+--- !u!23 &23310634890709528
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979071707806332}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fa1dc89dc5e5035409a51751e3c1415f, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1463395999556775
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4248435740277673}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4248435740277673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463395999556775}
+  m_LocalRotation: {x: 0.080929935, y: 0.7024601, z: -0.08093001, w: 0.7024603}
+  m_LocalPosition: {x: 0.02747, y: 0.003, z: -0}
+  m_LocalScale: {x: 0.010000006, y: 0.009999994, z: 0.010000011}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4460304359747438}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 13.144067, y: -89.999985, z: 0}

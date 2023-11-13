@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1462208655635632
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4722921307666134}
+  - component: {fileID: 114104270127307794}
+  m_Layer: 0
+  m_Name: VehiclesDriversDistribution
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4722921307666134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462208655635632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114104270127307794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462208655635632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c44ae464aadd9c5f9d7abd3d9dc449f5, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  DefaultDriver: {fileID: 0}
+  VehicleDistributions:
+  - Vehicle: {fileID: 114428900226226098, guid: 33b30ee2ff3f8a94e83d3d67dab90951, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1708135510534203, guid: 2cad35d9c36b628479a6724518ef970c, type: 2}
+        Percent: 40
+      - Prefab: {fileID: 1708135510534203, guid: 2cad35d9c36b628479a6724518ef970c, type: 2}
+        Percent: 40
+      - Prefab: {fileID: 1594928731406507, guid: d7b07f720ccfc29429fe53766b4e235e, type: 2}
+        Percent: 10
+      - Prefab: {fileID: 1774415230996648, guid: 47a6716a8ad56c94c8b231f29193d73d, type: 2}
+        Percent: 10
+  - Vehicle: {fileID: 114279737243735255, guid: cabbc430d062e9c498d8925c483ccc0d, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1009580909088583, guid: 886f43221a90e984aa14aabeabd105f8, type: 2}
+        Percent: 30
+      - Prefab: {fileID: 1352405527067691, guid: 788748f554c1ccb46b6ab2dee89ea67e, type: 2}
+        Percent: 30
+      - Prefab: {fileID: 1731882455470844, guid: ac40ba2d3b4088840b99621e97cff031, type: 2}
+        Percent: 20
+      - Prefab: {fileID: 1708135510534203, guid: 2cad35d9c36b628479a6724518ef970c, type: 2}
+        Percent: 20
+  - Vehicle: {fileID: 114170179284596470, guid: 992b803bd207e5244bd93881946fdc03, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1634429809310552, guid: 8165fec352694894680a54065a063228, type: 2}
+        Percent: 20
+      - Prefab: {fileID: 1039153279278094, guid: 5f158e94e75d0d64086dceefc0301136, type: 2}
+        Percent: 40
+      - Prefab: {fileID: 1009580909088583, guid: 886f43221a90e984aa14aabeabd105f8, type: 2}
+        Percent: 20
+      - Prefab: {fileID: 1263422235681651, guid: 56c41b885b2bea74793f85cb617dee36, type: 2}
+        Percent: 20
+  - Vehicle: {fileID: 114989093052444841, guid: d007d28678009f64c8a0cbc239a62c72, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1731882455470844, guid: ac40ba2d3b4088840b99621e97cff031, type: 2}
+        Percent: 20
+      - Prefab: {fileID: 1731882455470844, guid: ac40ba2d3b4088840b99621e97cff031, type: 2}
+        Percent: 20
+      - Prefab: {fileID: 1009580909088583, guid: 886f43221a90e984aa14aabeabd105f8, type: 2}
+        Percent: 20
+      - Prefab: {fileID: 1352405527067691, guid: 788748f554c1ccb46b6ab2dee89ea67e, type: 2}
+        Percent: 20
+      - Prefab: {fileID: 1927922354644896, guid: ddcb5d8e2b2f0c644b926ae36544517b, type: 2}
+        Percent: 20
+  - Vehicle: {fileID: 114029937375308269, guid: bce1ba211fd51754a94ef2e1bf7302f5, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1009580909088583, guid: 886f43221a90e984aa14aabeabd105f8, type: 2}
+        Percent: 33.33
+      - Prefab: {fileID: 1352405527067691, guid: 788748f554c1ccb46b6ab2dee89ea67e, type: 2}
+        Percent: 33.33
+      - Prefab: {fileID: 1927922354644896, guid: ddcb5d8e2b2f0c644b926ae36544517b, type: 2}
+        Percent: 33.33
+  - Vehicle: {fileID: 114975642463056342, guid: 99acf37d7f376b54a8d1bc764622a7c5, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1708135510534203, guid: 2cad35d9c36b628479a6724518ef970c, type: 2}
+        Percent: 17.65
+      - Prefab: {fileID: 1708135510534203, guid: 2cad35d9c36b628479a6724518ef970c, type: 2}
+        Percent: 41.18
+      - Prefab: {fileID: 1263422235681651, guid: 56c41b885b2bea74793f85cb617dee36, type: 2}
+        Percent: 41.18
+  - Vehicle: {fileID: 114385193276572645, guid: b6d1399879b91194c80babe9af77563c, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1855147696796996, guid: 992bca6b3737dcc4e85f4f9402dd97a7, type: 2}
+        Percent: 50
+      - Prefab: {fileID: 1166959582791808, guid: 77e9aed051b5e5e41a1b4efebba4cb18, type: 2}
+        Percent: 50
+  - Vehicle: {fileID: 114831404926503547, guid: 54d4a2cd4077e2b49a56d2a1d62d0db4, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1039153279278094, guid: 5f158e94e75d0d64086dceefc0301136, type: 2}
+        Percent: 8.33
+      - Prefab: {fileID: 1731882455470844, guid: ac40ba2d3b4088840b99621e97cff031, type: 2}
+        Percent: 15.28
+      - Prefab: {fileID: 1731882455470844, guid: ac40ba2d3b4088840b99621e97cff031, type: 2}
+        Percent: 15.28
+      - Prefab: {fileID: 1097130946595857, guid: 4965f5a014e6cd347afa1eff8333d81b, type: 2}
+        Percent: 15.28
+      - Prefab: {fileID: 1774415230996648, guid: 47a6716a8ad56c94c8b231f29193d73d, type: 2}
+        Percent: 15.28
+      - Prefab: {fileID: 1855147696796996, guid: 992bca6b3737dcc4e85f4f9402dd97a7, type: 2}
+        Percent: 15.28
+      - Prefab: {fileID: 1166959582791808, guid: 77e9aed051b5e5e41a1b4efebba4cb18, type: 2}
+        Percent: 15.28
+  - Vehicle: {fileID: 114811519954825777, guid: 56d80517c64fb4e48a1cbba0023edf04, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1009580909088583, guid: 886f43221a90e984aa14aabeabd105f8, type: 2}
+        Percent: 16.67
+      - Prefab: {fileID: 1480364995220128, guid: 99c7754919bf0e344a3dbea068f4fca1, type: 2}
+        Percent: 16.67
+      - Prefab: {fileID: 1708135510534203, guid: 2cad35d9c36b628479a6724518ef970c, type: 2}
+        Percent: 16.67
+      - Prefab: {fileID: 1331950373416736, guid: 0ec7d18a5dd985642bf08030799306a4, type: 2}
+        Percent: 16.67
+      - Prefab: {fileID: 1263422235681651, guid: 56c41b885b2bea74793f85cb617dee36, type: 2}
+        Percent: 16.67
+  - Vehicle: {fileID: 114486037679002739, guid: 330006488643d4c44adb473f304d5804, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1731882455470844, guid: ac40ba2d3b4088840b99621e97cff031, type: 2}
+        Percent: 20
+      - Prefab: {fileID: 1731882455470844, guid: ac40ba2d3b4088840b99621e97cff031, type: 2}
+        Percent: 20
+      - Prefab: {fileID: 1673713601502039, guid: 2fcd943f346db084aaa404d9e57ff67a, type: 2}
+        Percent: 20
+      - Prefab: {fileID: 1331950373416736, guid: 0ec7d18a5dd985642bf08030799306a4, type: 2}
+        Percent: 20
+      - Prefab: {fileID: 1263422235681651, guid: 56c41b885b2bea74793f85cb617dee36, type: 2}
+        Percent: 20
+  - Vehicle: {fileID: 114493417833293833, guid: baf4138c09a58104faa6abf7f0e83de8, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1009580909088583, guid: 886f43221a90e984aa14aabeabd105f8, type: 2}
+        Percent: 23.26
+      - Prefab: {fileID: 1392783894446246, guid: d137f4abf87be2e43a16e084cce639c7, type: 2}
+        Percent: 23.26
+      - Prefab: {fileID: 1249971294379236, guid: 243c01c305861614684bd1bc96f4c18f, type: 2}
+        Percent: 23.26
+      - Prefab: {fileID: 1999190299863016, guid: 73f26aed65fdb1e48b90e56135c0fffb, type: 2}
+        Percent: 15.12
+      - Prefab: {fileID: 1054533027243174, guid: 79085c98e77e94a428946627060a05e9, type: 2}
+        Percent: 15.12
+  - Vehicle: {fileID: 114484745463661991, guid: d906305f50852074e9e54e1e39075deb, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1731882455470844, guid: ac40ba2d3b4088840b99621e97cff031, type: 2}
+        Percent: 33.33
+      - Prefab: {fileID: 1731882455470844, guid: ac40ba2d3b4088840b99621e97cff031, type: 2}
+        Percent: 33.33
+      - Prefab: {fileID: 1634429809310552, guid: 8165fec352694894680a54065a063228, type: 2}
+        Percent: 16.67
+      - Prefab: {fileID: 1774415230996648, guid: 47a6716a8ad56c94c8b231f29193d73d, type: 2}
+        Percent: 16.67
+  - Vehicle: {fileID: 114496606663229902, guid: 571e9993740ed9a4daeb013586fa8af8, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1097130946595857, guid: 4965f5a014e6cd347afa1eff8333d81b, type: 2}
+        Percent: 14.29
+      - Prefab: {fileID: 1097130946595857, guid: 4965f5a014e6cd347afa1eff8333d81b, type: 2}
+        Percent: 14.29
+      - Prefab: {fileID: 1774415230996648, guid: 47a6716a8ad56c94c8b231f29193d73d, type: 2}
+        Percent: 14.29
+      - Prefab: {fileID: 1077695901330712, guid: cb6cd532f55be7d4db9840d789f2485d, type: 2}
+        Percent: 14.29
+      - Prefab: {fileID: 1137007306307185, guid: 28fd4bd060111c84d8e73482a45c8817, type: 2}
+        Percent: 14.29
+      - Prefab: {fileID: 1999190299863016, guid: 73f26aed65fdb1e48b90e56135c0fffb, type: 2}
+        Percent: 14.29
+      - Prefab: {fileID: 1249971294379236, guid: 243c01c305861614684bd1bc96f4c18f, type: 2}
+        Percent: 14.29
+  - Vehicle: {fileID: 114029073848736875, guid: 3e7011aa73f1bb4488888031c7d6027a, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1000347339101612, guid: b71462fa2faf2d847b91b9b54b55484d, type: 2}
+        Percent: 18.52
+      - Prefab: {fileID: 1608379700980494, guid: d943191983c7845459d77e6814bcbbc7, type: 2}
+        Percent: 18.52
+      - Prefab: {fileID: 1077695901330712, guid: cb6cd532f55be7d4db9840d789f2485d, type: 2}
+        Percent: 18.52
+      - Prefab: {fileID: 1708135510534203, guid: 2cad35d9c36b628479a6724518ef970c, type: 2}
+        Percent: 11.11
+      - Prefab: {fileID: 1708135510534203, guid: 2cad35d9c36b628479a6724518ef970c, type: 2}
+        Percent: 11.11
+      - Prefab: {fileID: 1392783894446246, guid: d137f4abf87be2e43a16e084cce639c7, type: 2}
+        Percent: 11.11
+      - Prefab: {fileID: 1249971294379236, guid: 243c01c305861614684bd1bc96f4c18f, type: 2}
+        Percent: 11.11
+  - Vehicle: {fileID: 114880223536158463, guid: 0787954bae7b7dc48a9a8479941bcd4f, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1793017848197331, guid: 9b8f91e84a3d86c428242b2d56340e2b, type: 2}
+        Percent: 80
+      - Prefab: {fileID: 1322238634820821, guid: fd85f56482083af489e09ec4691b6fed, type: 2}
+        Percent: 20
+  - Vehicle: {fileID: 114958164587645340, guid: 5195f4262a43bac41890d62ab757d626, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1793017848197331, guid: 9b8f91e84a3d86c428242b2d56340e2b, type: 2}
+        Percent: 20
+      - Prefab: {fileID: 1322238634820821, guid: fd85f56482083af489e09ec4691b6fed, type: 2}
+        Percent: 80
+  - Vehicle: {fileID: 114623962940794366, guid: 18c33016967fde949b3dbd715e4bef7d, type: 2}
+    Distribution:
+      Chances:
+      - Prefab: {fileID: 1855147696796996, guid: 992bca6b3737dcc4e85f4f9402dd97a7, type: 2}
+        Percent: 20
