@@ -45,7 +45,9 @@ public class PlayerMove : MonoBehaviour
         {
             if (Player.ins.playerHP.stamina > 0)
             {
-                curentfoward = (1 * (1 + UpgradeXpManager.ins.dataGame.maxSprintSpeed));
+                curentfoward = 1.5f;
+                Debug.Log(UpgradeXpManager.ins.dataGame.maxSprintSpeed);
+                Player.ins.characterController.Move((transform.forward * foward * UpgradeXpManager.ins.dataGame.maxSprintSpeed) * Time.deltaTime);
                 angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, Camera.main.transform.eulerAngles.y, ref turnCalmVelocity, turnCalmTime);
                 if (!Player.ins.playerHP.infiniteStamina)
                 {

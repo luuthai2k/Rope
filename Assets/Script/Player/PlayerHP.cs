@@ -177,7 +177,7 @@ public class PlayerHP : MonoBehaviour
         {
             CancelInvoke("CanRestoreStamina");
         }
-        Invoke("CanRestoreStamina", 1f);
+        Invoke("CanRestoreStamina", 2f);
     }
 
     private void CanRestoreStamina()

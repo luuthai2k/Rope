@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5093625902718467603}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: SimpleBody
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -2000,9 +2000,12 @@ MonoBehaviour:
   collisionwithhuman: 0
   collisionwithobject: 0
   collisionwithvehicles: 0
+  collisionwithtrafficlight: 0
   cancheckcollision: 0
-  forward: 0
-  back: 0
+  objcollisionwithhuman: {fileID: 0}
+  objcollisionwithobject: {fileID: 0}
+  objcollisionwithvehicles: {fileID: 0}
+  objcollisionwithtrafficlight: {fileID: 0}
 --- !u!65 &123153707607285250
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2014,7 +2017,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 4.5}
+  m_Size: {x: 2.5, y: 2, z: 6}
   m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!114 &6534290358857270100
 MonoBehaviour:
@@ -2043,7 +2046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6638571532666782143}
   - component: {fileID: 6575565760461714442}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: FrontGlass
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -2087,7 +2090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2240042177248508970}
   - component: {fileID: 2710394916741540264}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Bottom
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -2165,7 +2168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5033467221461855486}
   - component: {fileID: 3746761836601934901}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Hood
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -2269,7 +2272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8626388684325635797}
   - component: {fileID: 2211181571792753624}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Top
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -2373,7 +2376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2100839997207718071}
   - component: {fileID: 2391660853784546136}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: BackGlass
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -2470,13 +2473,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6833774152546126847}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.4580243, y: 0.105, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2261977397152533299}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &8110555005997560598
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,7 +3397,7 @@ Transform:
   m_GameObject: {fileID: 8736475743247437082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 4590448761278467585}
   - {fileID: 5093625902718467603}

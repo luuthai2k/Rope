@@ -70,7 +70,7 @@ public class VehiclesHp : MonoBehaviour
         hp -= _hp;
         if (car._driver != null)
         {
-            car._driver.GetComponent<NPCDriver>().runaway = true;
+            car._driver.GetComponent<NPCDriver>().driverType = DriverType.Runaway;
         }
         
 
@@ -97,22 +97,22 @@ public class VehiclesHp : MonoBehaviour
 
     }
 
-    public void ReturnVehicles()
-    {
-        if (Vector3.Distance(transform.position, Player.ins.transform.position) > 100)
-        {
-            NPCPooling.ins.ReturnCar(transform.parent.gameObject);
+    //public void ReturnVehicles()
+    //{
+    //    if (Vector3.Distance(transform.position, Player.ins.transform.position) > 100)
+    //    {
+    //        NPCPooling.ins.ReturnCar(transform.parent.gameObject);
 
-            //SpawnNPCInit.ins.Vehicles(-1);
+    //        //SpawnNPCInit.ins.Vehicles(-1);
 
-            Init();
+    //        Init();
 
-        }
-        else
-        {
-            Invoke("ReturnVehicles", 1f);
-        }
+    //    }
+    //    else
+    //    {
+    //        Invoke("ReturnVehicles", 1f);
+    //    }
        
-    }
+    //}
 
 }

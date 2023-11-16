@@ -35,7 +35,7 @@ public class ShootingHelicopter : MonoBehaviour
         {
             currentfireRaterocket = fireRateRocket;
             Vector3 direction = PointCenterSceenToWorld.ins.targetTransform.position - launcherRight.position;
-            GameObject rocket = BulletPooling.ins.GetRocketPool(launcherMid.position);
+            GameObject rocket = BulletPooling.ins.GetRocketHeliPool(launcherMid.position);
             rocket.transform.rotation = Quaternion.LookRotation(direction);
             rocket.GetComponent<Rigidbody>().velocity = (direction.normalized * power);
 

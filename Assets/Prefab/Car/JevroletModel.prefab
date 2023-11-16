@@ -2753,7 +2753,7 @@ Transform:
   m_GameObject: {fileID: 3913008744428690652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 3913008744951250504}
   - {fileID: 3913008746134818376}
@@ -2899,13 +2899,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3913008744692608117}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.4580243, y: 0.105, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3913008744143533448}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &3913008744913731287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2916,7 +2916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3913008744913731286}
   - component: {fileID: 3913008744913731285}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Hood
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -2998,9 +2998,12 @@ MonoBehaviour:
   collisionwithhuman: 0
   collisionwithobject: 0
   collisionwithvehicles: 0
+  collisionwithtrafficlight: 0
   cancheckcollision: 0
-  forward: 0
-  back: 0
+  objcollisionwithhuman: {fileID: 0}
+  objcollisionwithobject: {fileID: 0}
+  objcollisionwithvehicles: {fileID: 0}
+  objcollisionwithtrafficlight: {fileID: 0}
 --- !u!65 &3913008744951250505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3012,7 +3015,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 4.5}
+  m_Size: {x: 2.5, y: 2, z: 6}
   m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!114 &5597017223459503608
 MonoBehaviour:
@@ -3101,7 +3104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3913008745025644714}
   - component: {fileID: 3913008745025644713}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Top
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -3205,7 +3208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3913008745204472011}
   - component: {fileID: 3913008745204472010}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Bottom
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -3249,7 +3252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3913008745455165395}
   - component: {fileID: 3913008745455165394}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: BackGlass
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -3451,7 +3454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3913008745874885203}
   - component: {fileID: 3913008745874885202}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: FrontGlass
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -3524,7 +3527,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3913008746134818376}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: SimpleBody
   m_TagString: 
   m_Icon: {fileID: 0}

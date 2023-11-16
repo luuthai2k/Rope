@@ -46,29 +46,29 @@ public class Motor : MonoBehaviour, IDriverVehicles
     }
     public void DriverVehicles(float acceleration, float vertical, float horizontal, float maxspeed)
     {
-        Debug.Log(acceleration+"and"+maxspeed);
         VerticalMove(acceleration, maxspeed);
         HorizontalMove(horizontal);
         TiltingToMotorcycle(0, horizontal);
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    HorizontalMove(-1);
-        //    TiltingToMotorcycle(0, -1);
-        //}
-        //else if (Input.GetKey(KeyCode.D))
-        //{
-        //    HorizontalMove(1);
-        //    TiltingToMotorcycle(0, 1);
-        //}
+        _driver.transform.position = _driverSit.position;
+        if (Input.GetKey(KeyCode.A))
+        {
+            HorizontalMove(-1);
+            TiltingToMotorcycle(0, -1);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            HorizontalMove(1);
+            TiltingToMotorcycle(0, 1);
+        }
     }
-    public void VerticalMove(float Vertical, float speed)
+    public void VerticalMove(float acceleration, float speed)
     {
         _rb.centerOfMass = Vector3.zero;
         float forwardSpeed = transform.InverseTransformDirection(_rb.velocity).z;
-        if (Vertical != 0)
+        if (acceleration != 0)
         {
             ApplyBreaks(0);
-            if (Vertical * forwardSpeed < 0 && _rb.velocity.magnitude >= 1)
+            if (acceleration * forwardSpeed < 0 && _rb.velocity.magnitude >= 1)
             {
 
                 presentAcceleration = 0;
@@ -80,7 +80,7 @@ public class Motor : MonoBehaviour, IDriverVehicles
             {
                 if (_rb.velocity.magnitude <= speed)
                 {
-                    presentAcceleration = Vertical * motorData.accelerationForce;
+                    presentAcceleration = acceleration * motorData.accelerationForce;
                 }
                 else
                 {
@@ -100,7 +100,6 @@ public class Motor : MonoBehaviour, IDriverVehicles
         }
 
         //frontWheelCollider.motorTorque = presentAcceleration;
-        Debug.Log(presentAcceleration);
         backWheelCollider.motorTorque = presentAcceleration;
 
     }

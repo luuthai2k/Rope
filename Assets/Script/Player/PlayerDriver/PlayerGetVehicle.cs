@@ -90,7 +90,7 @@ public class PlayerGetVehicle : MonoBehaviour
             Ray ray = new Ray(player.transform.position + Vector3.up, direction);
             Debug.DrawRay(ray.origin, ray.direction * 1f, Color.red);
             RaycastHit hit;
-            if (!Physics.Raycast(ray, out hit, 0.5f, obstacleMask))
+            if (!Physics.Raycast(ray, out hit, 0.5f, GameManager.ins.layerData.ObstacleLayer))
             {
                 targetRotation = Quaternion.LookRotation(direction, Vector3.up);
 
@@ -99,14 +99,14 @@ public class PlayerGetVehicle : MonoBehaviour
             {
                 Ray raycheck = new Ray(player.transform.position + Vector3.up, targetRotation * Vector3.forward);
                 RaycastHit hitcheck;
-                if (Physics.Raycast(raycheck, out hitcheck, 3f, obstacleMask))
+                if (Physics.Raycast(raycheck, out hitcheck, 3f, GameManager.ins.layerData.ObstacleLayer))
                 {
                     Vector3 avoidDirection = FindAvoidDirection(targetRotation * Vector3.forward);
                     targetRotation = Quaternion.LookRotation(avoidDirection, Vector3.up);
                 }
             }
             targetRotation = Quaternion.Euler(0, targetRotation.eulerAngles.y, 0);
-            player.transform.rotation = Quaternion.Slerp(player.transform.rotation, targetRotation, 5 * Time.deltaTime);
+            player.transform.rotation = Quaternion.Slerp(player.transform.rotation, targetRotation,10* Time.deltaTime);
             Player.ins.animator.SetFloat("Forward", 1);
             yield return null;
         }
@@ -125,7 +125,7 @@ public class PlayerGetVehicle : MonoBehaviour
             Vector3 rayDirection = Quaternion.Euler(0f, angleStep * i, 0f) * direction;
             Ray ray = new Ray(player.transform.position + Vector3.up, rayDirection);
 
-            if (!Physics.Raycast(ray, 5f, obstacleMask))
+            if (!Physics.Raycast(ray, 5f, GameManager.ins.layerData.ObstacleLayer))
             {
 
                 float angleDifference = Vector3.Angle(direction, rayDirection);

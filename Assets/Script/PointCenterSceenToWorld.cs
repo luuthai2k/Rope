@@ -31,17 +31,16 @@ public class PointCenterSceenToWorld : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit raycastHit, maxdis, GameManager.ins.layerData.AimColliderMask))
         {
             float distance = Vector3.Distance(_mainCamera.transform.position, raycastHit.point) - Vector3.Distance(_mainCamera.transform.position, Player.ins.transform.position);
+            Player.ins.playerControl.playerRope.CheckCanRope(distance, raycastHit);
             if (distance > mindis)
             {
                 targetTransform.position = raycastHit.point;
-                ControlsManager.ins.Control[0].GetComponent<CharacterControl>().rope.SetActive(true);
                 CollisionObj = raycastHit.collider.gameObject;
 
             }
             else
             {
                 targetTransform.localPosition = new Vector3(0, 0, 200);
-                ControlsManager.ins.Control[0].GetComponent<CharacterControl>().rope.SetActive(false);
             }
 
 
@@ -52,7 +51,7 @@ public class PointCenterSceenToWorld : MonoBehaviour
         }
         else
         {
-            ControlsManager.ins.Control[0].GetComponent<CharacterControl>().rope.SetActive(false);
+            Player.ins.playerControl.characterControl.rope.SetActive(false);
         }
 
     }

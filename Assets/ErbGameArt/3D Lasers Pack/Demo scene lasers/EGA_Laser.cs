@@ -28,7 +28,10 @@ public class EGA_Laser : MonoBehaviour
         Hit = HitEffect.GetComponentsInChildren<ParticleSystem>();
        
     }
-
+    private void OnEnable()
+    {
+        Laser.SetPosition(1, transform.position);
+    }
     void Update()
     {
         Laser.material.SetTextureScale("_MainTex", new Vector2(Length[0], Length[1]));                    
@@ -37,10 +40,10 @@ public class EGA_Laser : MonoBehaviour
         {
             
             Laser.SetPosition(0, transform.position);
-            Laser.SetPosition(1, PointCenterSceenToWorld.ins.targetTransform.position);
+          
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, PointCenterSceenToWorld.ins.targetTransform.position-transform.position, out hit, MaxLength))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, MaxLength))
             {
                 HitEffect.transform.position = hit.point + hit.normal * HitOffset;
                 HitEffect.transform.rotation = Quaternion.identity;
@@ -51,6 +54,7 @@ public class EGA_Laser : MonoBehaviour
                 Length[0] = MainTextureLength * (Vector3.Distance(transform.position, hit.point));
                 Length[2] = NoiseTextureLength * (Vector3.Distance(transform.position, hit.point));
                 CheckHitDame(hit.collider.gameObject);
+                Laser.SetPosition(1, hit.point);
             }
             else
             {
@@ -62,6 +66,7 @@ public class EGA_Laser : MonoBehaviour
                 }
                 Length[0] = MainTextureLength * (Vector3.Distance(transform.position, EndPos));
                 Length[2] = NoiseTextureLength * (Vector3.Distance(transform.position, EndPos));
+                Laser.SetPosition(1, EndPos);
             }
             if (Laser.enabled == false && LaserSaver == false)
             {

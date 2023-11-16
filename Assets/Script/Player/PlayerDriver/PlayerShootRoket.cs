@@ -64,8 +64,8 @@ public class PlayerShootRoket : MonoBehaviour
         Vector3 direction = PointCenterSceenToWorld.ins.targetTransform.position - pos;
         ParticleSystem flash = FxPooling.ins.GetmuzzleFlashPool(muzzleTransform.position);
         flash.gameObject.transform.parent = muzzleTransform;
-        flash.gameObject.transform.localScale = Vector3.one;
-        flash.transform.rotation = Quaternion.LookRotation(direction);
+        flash.gameObject.transform.localScale = Vector3.zero;
+        flash.transform.rotation = Quaternion.identity;
         GameObject rocket = BulletPooling.ins.GetRocketPool(muzzleTransform.position);
         rocket.transform.rotation = Quaternion.LookRotation(direction);
         rocket.GetComponent<Rigidbody>().velocity = (direction.normalized * speed);

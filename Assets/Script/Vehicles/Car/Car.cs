@@ -58,7 +58,8 @@ public class Car : MonoBehaviour, IDriverVehicles
         MoveVehicle(acceleration, maxspeed);
         VehicleSteering(horizontal);
         UpdateVehicleSteering();
-
+        _driver.transform.position = _driverSit.position;
+        _driver.transform.localRotation = Quaternion.identity;
         if (Input.GetKey(KeyCode.A))
         {
             VehicleSteering(-1);
@@ -92,7 +93,7 @@ public class Car : MonoBehaviour, IDriverVehicles
                 }
                 else
                 {
-
+                    //ApplyBreaks(carData.breakingForceMax);
                     presentAcceleration = 0;
                 }
 
@@ -104,10 +105,9 @@ public class Car : MonoBehaviour, IDriverVehicles
             ApplyBreaks(carData.breakingForce);
             presentAcceleration = 0;
         }
-        backRightWheelCollider.motorTorque = presentAcceleration;
-        backLeftWheelCollider.motorTorque = presentAcceleration;
-        //frontRightWheelCollider.motorTorque = presentAcceleration;
-        //frontRightWheelCollider.motorTorque = presentAcceleration;
+        backRightWheelCollider.motorTorque = presentAcceleration*Mathf.Clamp01(speed);
+        backLeftWheelCollider.motorTorque = presentAcceleration * Mathf.Clamp01(speed);
+      
 
     }
     public void UpdateVehicleSteering()
@@ -124,6 +124,7 @@ public class Car : MonoBehaviour, IDriverVehicles
         presentTurnAngle = Horizontal * carData.wheelsTorque;
         frontRightWheelCollider.steerAngle = presentTurnAngle;
         frontLeftWheelCollider.steerAngle = presentTurnAngle;
+       
 
 
     }

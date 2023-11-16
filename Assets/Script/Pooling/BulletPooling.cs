@@ -9,11 +9,17 @@ public class BulletPooling : MonoBehaviour
     public List<GameObject> rocketPool = new List<GameObject>();
     public GameObject laser;
     public List<GameObject> laserPool = new List<GameObject>();
+    public GameObject rocketHeli;
+    public List<GameObject> rocketHeliPool = new List<GameObject>();
+   
     void Start()
     {
         ins = this;
     }
-
+    public GameObject GetRocketHeliPool(Vector3 pos)
+    {
+        return GetPool(pos, rocket, rocketHeliPool);
+    }
     public GameObject GetRocketPool(Vector3 pos)
     {
         return GetPool(pos, rocket, rocketPool);

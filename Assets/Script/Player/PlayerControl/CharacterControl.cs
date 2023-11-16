@@ -49,14 +49,6 @@ public class CharacterControl : MonoBehaviour
     public void GetVehicles()
     {
         if (isGetIn) return;
-        //isGetIn = false;
-        //if (eventGetInVehicles != null)
-        //{
-        //    eventGetInVehicles();
-        //    Player.ins.animator.SetBool("IsWalkInCar", true);
-
-
-        //}
     }
     public void Swing()
     {
@@ -96,8 +88,12 @@ public class CharacterControl : MonoBehaviour
     }
     public void Rocket()
     {
-        if (Player.ins.playerHP.stamina < 15) return;
+        if (Player.ins.playerHP.stamina < 15||!Player.ins.playerControl.onSurface) return;
         isRocket = true;
+        //dissable.SetActive(true);
+    }
+    public void WaitShootRocket()
+    {
         dissable.SetActive(true);
     }
     public void FinishRocket()

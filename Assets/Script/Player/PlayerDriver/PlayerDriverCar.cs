@@ -18,7 +18,7 @@ public class PlayerDriverCar : MonoBehaviour
         Player.ins.animator.SetTrigger("GetInVehicles");
         Player.ins.animator.SetInteger("VehiclesType", 1);
         Player.ins.animator.SetFloat("CarType", ((int)car.carData.carType));
-        car.animOpenDoor.SetTrigger("Open");
+        car.animOpenDoor.Play("Car_1_OpenLeft");
         CameraManager.ins.ChangeCam(1, car._camtarget);
         if (car._driver != null)
         {
@@ -43,6 +43,7 @@ public class PlayerDriverCar : MonoBehaviour
     }
     public void EnterCar()
     {
+        car.animOpenDoor.Play("Car_1_CloseLeft");
         transform.parent.DOMove(car._driverSit.position, 1f)
             .OnComplete(FinishGetInCar);
     }
@@ -60,43 +61,39 @@ public class PlayerDriverCar : MonoBehaviour
     {
         if (!canDriver) return;
         car.DriverVehicles(vehiclesControl.Vertical, 0, vehiclesControl.Horizontal, car._maxspeed);
-        //car.MoveVehicle(vehiclesControl.Vertical, car._maxspeed);
-        //car.VehicleSteering(vehiclesControl.Horizontal);
-        //car.UpdateVehicleSteering();
-
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    car.VehicleSteering(-1);
-        //}
-        //else if (Input.GetKey(KeyCode.D))
-        //{
-        //    car.VehicleSteering(1);
-        //}
     }
     public void GetOutCar(Transform enterFormPos)
     {
+        
         canDriver = false;
-        car.animOpenDoor.SetBool("Open", true);
+        car.animOpenDoor.Play("Car_1_OpenLeft");
         car._driver = null;
         CameraManager.ins.ChangeCam(0, transform);
         if (car._rb.velocity.magnitude > 5)
         {
             Player.ins.transform.position = enterFormPos.position;
             Player.ins.animator.Play("exit_force3");
-
+            Invoke("CloseDoor", 2f);
         }
         else
         {
             Player.ins.animator.Play("GetOutCar");
+            car._rb.isKinematic = true;
             Player.ins.animator.applyRootMotion = true;
+            Invoke("CloseDoor", 1.2f);
         }
-        Invoke("FinishGetOutCar", 1f);
+        Invoke("FinishGetOutCar", 2f);
+    }
+    public void CloseDoor()
+    {
+        car.animOpenDoor.Play("Car_1_CloseLeft");
     }
     public void FinishGetOutCar()
     {
         transform.parent.parent = null;
         Player.ins.ChangeControl(0);
         Player.ins.characterController.enabled = true;
+        car._rb.isKinematic = false;
 
 
     }

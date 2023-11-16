@@ -47,7 +47,7 @@ public class Helicopter : MonoBehaviour, IDriverVehicles
         get { return enginePower; }
         set
         {
-            bladeRotation.BladeSpeed = value * 250;
+            bladeRotation.BladeSpeed = value * 1000;
             enginePower = value;
         }
     }
@@ -75,7 +75,7 @@ public class Helicopter : MonoBehaviour, IDriverVehicles
             if (acceleration < 0)
             {
 
-                EnginePower = Mathf.MoveTowards(EnginePower, 1, 0.1f);
+                EnginePower = Mathf.Clamp(EnginePower - engineLift, -100, 10);
                 _rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
 
             }
@@ -87,16 +87,11 @@ public class Helicopter : MonoBehaviour, IDriverVehicles
                     _rb.constraints = RigidbodyConstraints.FreezePositionY;
 
                 }
-                //else
-                //{
-                //   _rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
-                //}
-
 
             }
             else
             {
-                EnginePower = Mathf.Clamp(EnginePower + engineLift, 20, 50);
+                EnginePower = Mathf.Clamp(EnginePower + engineLift, 10, 100);
                 _rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
             }
         }
@@ -104,7 +99,7 @@ public class Helicopter : MonoBehaviour, IDriverVehicles
         {
             if (acceleration > 0)
             {
-                EnginePower = Mathf.Clamp(EnginePower + engineLift, 0, 50);
+                EnginePower = Mathf.Clamp(EnginePower + engineLift, 0, 100);
                 //_rb.isKinematic = false;
             }
             else
@@ -171,6 +166,7 @@ public class Helicopter : MonoBehaviour, IDriverVehicles
         {
             EnginePower = Mathf.MoveTowards(EnginePower, 0, 0.1f);
             bladeRotation.BladeRotate();
+            _rb.constraints &= ~RigidbodyConstraints.FreezePositionY;
             _rb.isKinematic = false;
             yield return null;
         }

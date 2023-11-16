@@ -9,7 +9,8 @@ public class PoolingManager : MonoBehaviour
     public BulletPooling bulletPooling;
     public FxShotPooling fxShotPooling;
     public NPCPooling npcPooling;
-    private void Awake()
+    public CivilianPooling civilianPooling;
+    void Awake()
     {
         ins = this;
     }

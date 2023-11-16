@@ -8,11 +8,11 @@ public class BladeRotation : MonoBehaviour
     public GameObject tailBlade;
     private Vector3 mainrotation;
     private Vector3 tailrotation;
-    public float bladeSpeed=1000;
+    private float bladeSpeed=1000;
     public float BladeSpeed
     {
         get { return bladeSpeed; }
-        set { bladeSpeed = Mathf.Clamp(value, 0, 1000); }
+        set { bladeSpeed = Mathf.Clamp(value, -1000, 1000); }
     }
     private float rotateDegree;
     void Start()

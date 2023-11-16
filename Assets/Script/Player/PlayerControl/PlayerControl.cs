@@ -84,7 +84,7 @@ public class PlayerControl : MonoBehaviour
                 playerRope.Rope(characterControl);
                 break;
             case PlayerState.Attack:
-                playerAttack.Attack();
+                playerAttack.Attack(characterControl.isAttack);
                 break;
             case PlayerState.Rocket:
                 playerShootRoket.ShootRoket();
@@ -203,7 +203,7 @@ public class PlayerControl : MonoBehaviour
         }
         else if (_playerState == PlayerState.Rocket)
         {
-            //if (playerShootRoket.isShoot) return;
+            characterControl.WaitShootRocket();
         }
         else if (_playerState == PlayerState.Move)
         {
@@ -222,7 +222,15 @@ public class PlayerControl : MonoBehaviour
     {
         if (playerState == PlayerState.Attack)
         {
-            playerAttack.FinishActack(0f);
+            timedelay += Time.deltaTime;
+            if (timedelay >= 1.5f)
+            {
+                timedelay = 0;
+                playerAttack.FinishActack(0f);
+                return true;
+               
+            }
+            return false;
         }
         else if (playerState == PlayerState.Laser)
         {

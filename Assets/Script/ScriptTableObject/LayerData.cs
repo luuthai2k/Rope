@@ -16,5 +16,6 @@ public class LayerData : ScriptableObject
     public LayerMask Surface;
     public LayerMask AimColliderMask;
     public LayerMask WallMask;
+    public LayerMask Trafficlight;
 
 }

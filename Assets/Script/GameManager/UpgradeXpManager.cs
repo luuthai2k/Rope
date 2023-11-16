@@ -154,7 +154,7 @@ public class UpgradeXpManager : MonoBehaviour
         PlayerPrefs.SetString(dataname, JsonConvert.SerializeObject(dataGame));
     }
 }
-
+[System.Serializable]
 public class DataGame
 {
     [SerializeField]

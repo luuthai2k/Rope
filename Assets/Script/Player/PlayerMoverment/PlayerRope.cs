@@ -8,13 +8,14 @@ public class PlayerRope : MonoBehaviour
     [SerializeField] private LayerMask pullColliderMask;
     [SerializeField] private LayerMask rushColliderMask;
     [SerializeField] Transform ropeTarget;
+    private Vector3 currentRopeTarget;
     private Transform player;
     public Vector3 currentThreadEnd;
     public LineRenderer lineRenderer;
     public Transform startPoint;
     public float shootsilk;
     public GameObject collisionObj;
-    public Rigidbody rb;
+    private Rigidbody rb;
     public bool isshootsilk;
     public bool ispull;
     public bool canpull;
@@ -27,16 +28,48 @@ public class PlayerRope : MonoBehaviour
     public float damping;
     public float speedrotate;
     public float timeStartOnGround;
-    Vector3 targetPos;
     Quaternion rot;
-    float timedelay;
     public void Start()
     {
         player = Player.ins.transform;
     }
+    public void CheckCanRope(float dis, RaycastHit hit)
+    {
+
+        if (pullColliderMask == (pullColliderMask | (1 << hit.collider.gameObject.layer)))
+        {
+            if (dis >= 1) 
+            {
+                ispull = true;
+                currentRopeTarget = hit.point;
+                Player.ins.playerControl.characterControl.rope.SetActive(true);
+                return;
+            }
+            Player.ins.playerControl.characterControl.rope.SetActive(false);
+
+        }
+        else if (rushColliderMask == (rushColliderMask | (1 << hit.collider.gameObject.layer)))
+        {
+            if (dis >= 5)
+            {
+                ispull = false;
+                currentRopeTarget = hit.point + hit.normal * 0.3f;
+                Player.ins.playerControl.characterControl.rope.SetActive(true);
+                return;
+            }
+            
+                Player.ins.playerControl.characterControl.rope.SetActive(false);
+            
+
+           
+
+        }
+
+
+    }
     public void Rope(CharacterControl _characterControl)
     {
-        UpdateLineRender();
+        //UpdateLineRender();
         player.rotation = Quaternion.RotateTowards(player.rotation, rot, speedrotate * Time.deltaTime);
         if (!isshootsilk) return;
         if (Vector3.Distance(currentThreadEnd, ropeTarget.position) >= 0.1f) return;
@@ -53,37 +86,42 @@ public class PlayerRope : MonoBehaviour
 
         }
     }
+    IEnumerator CouroutineUpdateLineRender()
+    {
+        while (isshootsilk)
+        {
+            UpdateLineRender();
+            yield return null;
+        }
+        yield break;
+    }
     public void SetTargetPoint()
     {
         collisionObj = PointCenterSceenToWorld.ins.CollisionObj;
         ropeTarget.transform.parent = collisionObj.transform;
         Vector3 direction = PointCenterSceenToWorld.ins.targetTransform.position - startPoint.position;
-        RaycastHit hit;
-        if (Physics.Raycast(startPoint.position, direction, out hit, direction.magnitude + 5))
+        if (ispull) return;
+        Player.ins.animator.SetBool("IsRope", true);
+
+    }
+    public void CheckCanRope(RaycastHit hit,float distance)
+    {
+        if (pullColliderMask == (pullColliderMask | (1 << collisionObj.layer)))
         {
-            if (pullColliderMask == (pullColliderMask | (1 << collisionObj.layer)))
-            {
-                ispull = true;
-                ropeTarget.position = hit.point;
+            ispull = true;
+            ropeTarget.position = hit.point;
 
-                return;
-            }
-            else
-            {
-
-                Player.ins.animator.SetBool("IsRope", true);
-                ispull = false;
-                ropeTarget.position = hit.point + hit.normal * 0.3f;
-                return;
-
-            }
-
+            return;
         }
         else
         {
-            ropeTarget.position = PointCenterSceenToWorld.ins.targetTransform.position - direction * 0.3f;
-        }
 
+            Player.ins.animator.SetBool("IsRope", true);
+            ispull = false;
+            ropeTarget.position = hit.point + hit.normal * 0.3f;
+            return;
+
+        }
     }
     public void PrepareShoot()
     {
@@ -107,6 +145,8 @@ public class PlayerRope : MonoBehaviour
         currentThreadEnd = startPoint.position;
         lineRenderer.enabled = true;
         isshootsilk = true;
+        StartCoroutine(CouroutineUpdateLineRender());
+        ropeTarget.position = currentRopeTarget;
         this.distance = Vector3.Distance(ropeTarget.position, transform.position);
         if (!ispull)
         {
@@ -150,7 +190,7 @@ public class PlayerRope : MonoBehaviour
         rb.isKinematic = false;
         rb.AddTorque(randomTorque * 10, ForceMode.VelocityChange);
         rb.velocity = throwVelocity;
-        Invoke("FinishRope", 0.1f);
+        Invoke("FinishRope", 0.5f);
     }
     public void Rush()
     {

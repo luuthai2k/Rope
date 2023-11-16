@@ -20,6 +20,7 @@ public class PlayerDriverTank : MonoBehaviour
     }
     private void Update()
     {
+     
         tank.DriverVehicles(tankControl.Vertical, 0, tankControl.Horizontal, tank._maxspeed);
         //tank.MoveVehicle(tankControl.Vertical,tank._maxspeed);
         //tank.HorizontalMove(tankControl.Horizontal);
@@ -37,6 +38,7 @@ public class PlayerDriverTank : MonoBehaviour
         transform.parent.position = _enterFromPos.position;
         Player.ins.player.SetActive(true);
         Player.ins.ChangeControl(0);
+        CameraManager.ins.ChangeCam(0);
         Player.ins.characterController.enabled = true;
     }
 }

@@ -1373,12 +1373,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a09cf22cd86624c93f25f478d90e79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  driverType: 0
   npcControl: {fileID: 1715713701842772540}
   findThePath: {fileID: 5161803271222108606}
   ischangedirection: 0
   candriver: 0
-  runaway: 0
-  pursue: 0
   Vehiclel: {fileID: 0}
   currentspeed: 0
   steeringAngle: 2
@@ -1640,7 +1639,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1711623812630982064}
-  - component: {fileID: 1597026771510293427}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -1664,20 +1662,6 @@ Transform:
   m_Father: {fileID: 1711407807419306584}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
---- !u!136 &1597026771510293427
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1714386851061502868}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.3
-  m_Height: 1.7
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!1 &1714402651757009993
 GameObject:
   m_ObjectHideFlags: 0

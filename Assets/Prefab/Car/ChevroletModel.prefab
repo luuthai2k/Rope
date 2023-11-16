@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1643059671220794478}
   - component: {fileID: 2339931460529747348}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: FrontGlass
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5126721025506433453}
   - component: {fileID: 1505927738082479057}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Hood
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1692735830067855071}
   - component: {fileID: 4110034715765681314}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Top
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -287,13 +287,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079569093006297373}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.4580243, y: 0.105, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6732393284326050257}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &2434964368618562710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,7 +2024,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4203989812471967345}
   - component: {fileID: 1383401972572189528}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Bottom
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -2140,7 +2140,7 @@ Transform:
   m_GameObject: {fileID: 4266138197325713400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 185.00171, y: -64, z: -142.99779}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 9060926492223278307}
   - {fileID: 330378317117312079}
@@ -2397,7 +2397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7453323193952130482}
   - component: {fileID: 8629250266895152746}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: BackGlass
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -2441,7 +2441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1659008496728003790}
   - component: {fileID: 6396441799747879474}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Middle
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -2523,9 +2523,12 @@ MonoBehaviour:
   collisionwithhuman: 0
   collisionwithobject: 0
   collisionwithvehicles: 0
+  collisionwithtrafficlight: 0
   cancheckcollision: 0
-  forward: 0
-  back: 0
+  objcollisionwithhuman: {fileID: 0}
+  objcollisionwithobject: {fileID: 0}
+  objcollisionwithvehicles: {fileID: 0}
+  objcollisionwithtrafficlight: {fileID: 0}
 --- !u!65 &4881879825279868128
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2537,7 +2540,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 4.5}
+  m_Size: {x: 2.5, y: 2, z: 6}
   m_Center: {x: 0, y: 0.6, z: 0}
 --- !u!114 &122868695670815499
 MonoBehaviour:
@@ -2565,7 +2568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 330378317117312079}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: SimpleBody
   m_TagString: 
   m_Icon: {fileID: 0}

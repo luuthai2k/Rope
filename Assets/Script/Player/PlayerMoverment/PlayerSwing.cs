@@ -218,14 +218,8 @@ public class PlayerSwing : MonoBehaviour
     private bool CheckForAngle(Vector3 pos, Vector3 source)
     {
         Vector3 direction = pos - source;
-
-        // Vector phẳng Oxz (mặt phẳng ngang)
         Vector3 planeNormal = Vector3.up;
-
-        // Tính góc giữa direction và mặt phẳng Oxz
         float Angle = Vector3.SignedAngle(direction, planeNormal, Vector3.up);
-
-        Debug.Log(Angle);
         if (Angle < maxAngle)
             return true;
         else

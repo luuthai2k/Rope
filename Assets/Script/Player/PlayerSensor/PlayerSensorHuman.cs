@@ -6,33 +6,20 @@ public class PlayerSensorHuman : IHumanSensor
 {
     private void OnTriggerEnter(Collider other)
     {
-        ObjectCollision = other.gameObject;
-        if (other.gameObject.layer == GameManager.ins.layerData.HumanLayer)
+        if (GameManager.ins.layerData.HumanLayer == (GameManager.ins.layerData.HumanLayer | (1 << other.gameObject.layer)))
         {
-
-            //ObjectCollision = other.gameObject;
+            if (other.gameObject.transform.parent.gameObject == transform.parent.gameObject) return;
+            ObjectCollision = other.gameObject.transform.parent.gameObject;
 
         }
        
     }
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == (GameManager.ins.layerData.HumanLayer | (1 << other.gameObject.layer)))
+        if (other.gameObject.transform.parent.gameObject == ObjectCollision)
         {
 
-            ControlsManager.ins.Control[0].GetComponent<CharacterControl>().getInVehicles.SetActive(false);
+            ObjectCollision = null;
         }
-        //if (enemylayerMask == (enemylayerMask | (1 << other.gameObject.layer)))
-        //{
-
-        //    enemy = null;
-
-        //}
-        //if (other.gameObject.layer == LayerMask.NameToLayer("Water"))
-        //{
-        //    characterControl.EndSwimming();
-        //    Player.ins.animator.SetInteger("IsSwimming", 0);
-        //    playerControl.ChangeState(PlayerState.Move);
-        //}
     }
 }

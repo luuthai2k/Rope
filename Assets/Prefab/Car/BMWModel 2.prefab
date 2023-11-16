@@ -40,7 +40,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1323994872791162453}
   - component: {fileID: 4617741667185808283}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Hood
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -361,7 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4520177692880291438}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: SimpleBody
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -1727,9 +1727,12 @@ MonoBehaviour:
   collisionwithhuman: 0
   collisionwithobject: 0
   collisionwithvehicles: 0
+  collisionwithtrafficlight: 0
   cancheckcollision: 0
-  forward: 0
-  back: 0
+  objcollisionwithhuman: {fileID: 0}
+  objcollisionwithobject: {fileID: 0}
+  objcollisionwithvehicles: {fileID: 0}
+  objcollisionwithtrafficlight: {fileID: 0}
 --- !u!65 &6837210795418183013
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1741,7 +1744,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8, y: 1.5, z: 4.4}
+  m_Size: {x: 2.5, y: 1.5, z: 6}
   m_Center: {x: 0, y: 0.8180566, z: 0.13850093}
 --- !u!114 &64358154107937844
 MonoBehaviour:
@@ -2459,13 +2462,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6837210795950264696}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.4580243, y: 0.105, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6837210794419633562}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &6837210796012236653
 GameObject:
   m_ObjectHideFlags: 0
@@ -2782,7 +2785,7 @@ Transform:
   m_GameObject: {fileID: 6837210796099964635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 215.00175, y: -64, z: -146.99744}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 6837210795418183018}
   - {fileID: 4520177692880291438}
@@ -3255,7 +3258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5060913224088199254}
   - component: {fileID: 3724196114097186001}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: BackGlass
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -3299,7 +3302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5387422667679586071}
   - component: {fileID: 3451589316757759700}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: FrontGlass
   m_TagString: 
   m_Icon: {fileID: 0}
@@ -3343,7 +3346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8101788623332022406}
   - component: {fileID: 2399771855342372289}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Bottom
   m_TagString: 
   m_Icon: {fileID: 0}

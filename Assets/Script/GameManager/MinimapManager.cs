@@ -22,6 +22,7 @@ public class MinimapManager : MonoBehaviour
 
     [SerializeField]
     private GameObject player, minimapPoint;
+    public float size;
 
     public void Start()
     {
@@ -44,8 +45,8 @@ public class MinimapManager : MonoBehaviour
     {
         //gameUi.SetActive(true);
         //pauseUi.SetActive(false);
-        bl_MiniMap.DefaultHeight = 75;
-        cameraMinimap.orthographicSize = 75;
+        bl_MiniMap.DefaultHeight = size;
+        cameraMinimap.orthographicSize = size;
         //Time.timeScale = 1;
         bl_MiniMap.Target = player.transform;
         //bl_MiniMap.miniMapCamera.transform.position = player.transform.position + Vector3.up * 360;

@@ -40,8 +40,9 @@ public class Tank : MonoBehaviour, IDriverVehicles
 
     [Header("Vehicle Steering")]
     public float trackThiccness = 0.1f;
+    public float speedrotate;
     [Header("Vehicle breaking")]
-
+   
     [Header("TankTurret")]
     public GameObject mainGun;
     public GameObject barrel;
@@ -63,23 +64,45 @@ public class Tank : MonoBehaviour, IDriverVehicles
     }
     public void DriverVehicles(float acceleration, float vertical, float horizontal, float maxspeed)
     {
-        MoveVehicle(acceleration, maxspeed);
+       
         HorizontalMove(horizontal);
         UpdateVehicleSteering();
         //shootingTank.Shooting(tankControl.isShooting);
         MoveTurret();
         if (horizontal != 0 && acceleration == 0)
         {
-            MoveVehicle(0.2f, _maxspeed);
+            MoveVehicle(1, 5);
+        }
+        else
+        {
+            MoveVehicle(acceleration, maxspeed);
+            //if(acceleration == 0&& _rb.velocity.magnitude <= 1)
+            //{
+            //    _rb.isKinematic = true;
+            //}
+            //if(_rb.velocity.magnitude >= 1)
+            //{
+            //    _rb.isKinematic = true;
+            //}
+
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            HorizontalMove(-1);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            HorizontalMove(1);
         }
     }
     public void MoveVehicle(float Vertical, float speed)
     {
-
+        _rb.centerOfMass = Vector3.zero;
         float forwardSpeed = transform.InverseTransformDirection(_rb.velocity).z;
         ChainSteering(forwardSpeed);
         if (Vertical != 0)
         {
+            _rb.isKinematic = false;
             for (int i = 0; i < LeftWheelCollider.Count; i++)
             {
                 LeftWheelCollider[i].brakeTorque = 0;
@@ -119,10 +142,14 @@ public class Tank : MonoBehaviour, IDriverVehicles
             for (int i = 0; i < LeftWheelCollider.Count; i++)
             {
 
-                LeftWheelCollider[i].brakeTorque = carData.breakingForce;
-                RightWheelCollider[i].brakeTorque = carData.breakingForce;
+                LeftWheelCollider[i].brakeTorque = carData.breakingForceMax;
+                RightWheelCollider[i].brakeTorque = carData.breakingForceMax;
             }
-
+            //if(_rb.velocity.magnitude >= 1)
+            //{
+            //    _rb.isKinematic = true;
+            //}
+           
         }
 
         for (int i = 0; i < LeftWheelCollider.Count; i++)
@@ -149,12 +176,12 @@ public class Tank : MonoBehaviour, IDriverVehicles
     }
     public void HorizontalMove(float Horizontal)
     {
-        if (Horizontal != 0)
-        {
+        //if (Horizontal != 0)
+        //{
             Quaternion newRotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.eulerAngles.y + Horizontal * carData.wheelsTorque, transform.rotation.z));
 
-            transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, carData.wheelsTorque * Time.fixedDeltaTime);
-        }
+            transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, speedrotate * Time.fixedDeltaTime);
+        //}
 
 
     }
